@@ -126,7 +126,7 @@ if (!SpeechRecognition) {
         }
     });
 
-    //Stop button with polishing feature and translation feature (this block of code is carrying everything) UPDATE: It failed on me twice and wasted YEARS (2 hours) OF MY LIFE.
+    //Stop button with polishing feature and translation feature (this block of code is carrying everything).
     stopBtn.addEventListener('click', async () => {
     recognition.stop();
     if (finalTranscript.trim()) {
@@ -162,7 +162,7 @@ if (!SpeechRecognition) {
             });
     });
 
-    //------------------TEXT TO SPEECH-------------------//
+    //--------------------------TEXT TO SPEECH-------------------//
 
     //Gets available voices for the selected language
 function loadVoices() {
@@ -228,4 +228,5 @@ stopSpeakBtn.addEventListener("click", () => {
         statusEl.textContent = "Nothing is being spoken.";
     }
 });
+
 }

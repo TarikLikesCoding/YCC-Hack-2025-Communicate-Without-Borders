@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communicate Without Borders</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="top-bar">
+        <h1 class="logo">
+            <span>Communicate Without Borders</span>
+            <span style="float: right;"> YCC Hack 2025</span>
+        </h1>
+
+    </div>
+    <main class="container" role="main">
+        <h1 class="subhead">Communicate Without Borders</h1>
+        <p class="lead">A minimal web app using the browser Speech Recognition and OpenAI API. Click <strong>Start</strong> to speak and see live transcripts. Click <strong>Stop</strong> to get a properly analyzed and final version of your transcript in both languages.
+             The <strong>Hear Translation</strong> button will turn your translated text into audio and <strong>Stop Speaking</strong> button will stop it. </p>
+
+        <!-- Choosing ORIGINAL language -->
+
+        <div class="controls" role="toolbar" aria-label="Recording controls">
+            <select id="language" class="select" aria-label="Speech recognition language"> 
+                <option value="en-US">English</option>
+                <option value="es-ES">Spanish</option>
+                <option value="fr-FR">French</option>
+                <option value="de-DE">German</option>
+            </select>
+
+            <button id="startBtn">Start</button>
+            <button id="stopBtn" class="secondary" disabled>Stop</button>
+            <button id="clearBtn" class="secondary">Clear</button>
+            <button id="copyBtn" class="secondary">Copy Transcript</button>
+            <button id="speakBtn" class="secondary">🔊 Hear Translation</button>
+            <button id="stopSpeakBtn" class="secondary">⏹ Stop Speaking</button>
+            <div class="status" id="status">Idle</div>
+        </div>
+
+        <div>
+            <label class="small" for="finalTranscript">Final transcript</label>
+            <div id="finalTranscript" class="box" aria-live="polite" role="region" tabindex="0"></div>
+        </div>
+
+        <div style="margin-top:8px">
+            <label class="small" for="interim">Interim (live) transcript</label>
+            <div id="interim" class="box" role="status" aria-live="assertive"></div>
+        </div>
+
+        <!-- Choosing language TO translate TO -->
+        <div style="margin-top:8px">
+            <label class="small" for="translateSelect">Translate into:</label>
+            <select id="translateSelect" class="select">
+        <option value="es-ES">Spanish</option>
+        <option value="fr-FR">French</option>
+        <option value="de-DE">German</option>
+        <option value="en-US">English</option>
+    </select>
+        </div>
+
+        <div style="margin-top:8px">
+            <label class="small" for="translatedOutput">Translated Output</label>
+            <div id="translatedOutput" class="box" aria-live="polite" role="region" tabindex="0" disabled></div>
+        </div>
+
+        <footer>
+            <strong>Note:</strong> This works best in Chrome or Edge. If your browser doesn't support speech recognition you'll see an instruction.
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
